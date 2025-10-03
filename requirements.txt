@@ -1,0 +1,13 @@
+polars
+plotly
+mysql-connector-python
+pandas
+scikit-learn
+numpy
+kaleido
+seaborn
+mlxtend
+dash
+jupyter
+matplotlib
+joblib
