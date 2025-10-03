@@ -80,7 +80,7 @@ Sigue estos pasos para configurar y ejecutar el proyecto en tu entorno local.
 ### 2. Clonar el Repositorio
 
 ```bash
-git clone https://github.com/tu-usuario/MSeca_Proyecto_Aurelion.git
+git clone https://github.com/Marbinseca/MSeca_Proyecto_Aurelion
 cd MSeca_Proyecto_Aurelion
 ```
 
