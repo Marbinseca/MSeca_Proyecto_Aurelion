@@ -14,10 +14,10 @@ A continuación, se presenta una descripción detallada de su estructura y carac
 
 La base de datos Aurelion se compone de las siguientes tablas:
 
-1.  **Clientes**: Almacena información sobre los clientes, incluyendo datos demográficos y de contacto.
-2.  **Productos**: Contiene el catálogo de productos disponibles para la venta, con detalles como precios y descripciones.
-3.  **Ventas**: Registra las transacciones de venta, incluyendo información sobre el cliente, productos comprados y fecha de la venta.
-4.  **Detalles_Ventas**: Proporciona un desglose detallado de cada transacción de venta, incluyendo los productos específicos comprados y sus cantidades.
+1. **Clientes**: Almacena información sobre los clientes, incluyendo datos demográficos y de contacto.
+2. **Productos**: Contiene el catálogo de productos disponibles para la venta, con detalles como precios y descripciones.
+3. **Ventas**: Registra las transacciones de venta, incluyendo información sobre el cliente, productos comprados y fecha de la venta.
+4. **Detalles_Ventas**: Proporciona un desglose detallado de cada transacción de venta, incluyendo los productos específicos comprados y sus cantidades.
 
 ### Arquitectura General
 
@@ -38,23 +38,26 @@ Clientes (1) ←---→ (N) Ventas (1) ←---→ (N) Detalles_Ventas (N) ←---�
 ## 📊 DETALLE ESTRUCTURAL POR TABLA
 
 ### 🏪 1. TABLA CLIENTES
+
 - **Escala**: 95 clientes registrados (nombres únicos)
 - **Cobertura temporal**: Enero 2023 - Abril 2023
 - **Distribución geográfica**: 6 ciudades o municipios de Córdoba, Argentina
 
-
 ### 🏪 2. TABLA PRODUCTOS
+
 - **Escala**: 100 productos registrados
 - **Categorización**: 2 categorías principales (50 productos cada una)
 - **Rango de precios**: Amplia variabilidad (valor mínimo = 272 y máximo = 4982)
 - **Nota Importante**: Categorización inconsistente.Algunos productos como "Fernet", "Vino", "Cerveza" están categorizados como "Limpieza", lo cual parece incorrecto.
 
 ### 🏪 3. TABLA VENTAS
+
 - **Escala**: 120 transacciones de venta
 - **Período**: 6 meses (Enero 2024 - Junio 2024)
 - **Medios de pago**: 4 tipos diferentes
 
 ### 🏪 4. TABLA DETALLES_VENTAS
+
 - **Escala**: 343 líneas de detalle
 - **Relacional**: Múltiples productos por venta (promedio: 2.86 productos/venta)
 - **Integridad**: Campo importe calculado automáticamente
@@ -94,15 +97,17 @@ Clientes (1) ←---→ (N) Ventas (1) ←---→ (N) Detalles_Ventas (N) ←---�
 | **Mendiolaza** | Colón | Forma parte del Gran Córdoba, ubicada al norte de la ciudad capital. |
 
 - **Categorías de Productos (2 valores)**:
-    - Alimentos
-    - Limpieza
+  - Alimentos
+  - Limpieza
 
 - **Medios de Pago (4 valores)**:
-    - Tarjeta
-    - Efectivo
-    - Transferencia
-    - QR
+  - Tarjeta
+  - Efectivo
+  - Transferencia
+  - QR
+
 ## 🎯 CARACTERÍSTICAS TÉCNICAS
+
 ### Complejidad Relacional
 
 - Grado de relaciones: 3 relaciones directas
@@ -110,20 +115,25 @@ Clientes (1) ←---→ (N) Ventas (1) ←---→ (N) Detalles_Ventas (N) ←---�
 - Integridad referencial: No normalizada. Para ver normalización, revisar [Normalizacion Base de Datos Aurelion](https://drive.google.com/file/d/1QqqiQixGuYnMFjbb4t_1Dz8XzlW1vqKt/view?usp=sharing)
 
 ### Volumen de Datos
+
 - Tamaño estimado: ≈ 50-100 KB (base pequeña-mediana)
 - Registros/día: ≈ 0.67 ventas/día (promedio)
 - Crecimiento: Datos históricos completos
 
 ### Patrones de Datos
+
 - Consistencia: IDs con formato decimal (1.0, 2.0, etc.)
 - Formato fechas: DATETIME con hora 00:00:00
 - Nomenclatura: Nombres en español, emails válidos
 
-###  Diagrama Entidad-Relación (Normalizada)
+### Diagrama Entidad-Relación (Normalizada)
+
 ![Diagrama ER](/static/Proyecto_Aurelion.png)
 
 ## 📊 POTENCIAL ANALÍTICO
+
 ### Nivel de Detalle Disponible
+
 - Granularidad temporal: Hasta nivel de día
 - Segmentación: Por cliente, producto, ciudad, categoría
 - Métricas: Ventas, cantidades, ingresos, frecuencia
@@ -139,16 +149,19 @@ Clientes (1) ←---→ (N) Ventas (1) ←---→ (N) Detalles_Ventas (N) ←---�
 ## 📋 PREGUNTAS CLAVE
 
 ### Estratégicas
+
 - ¿Qué productos generan el 80% de los ingresos?
 - ¿Qué ciudades son más rentables?
 - ¿Qué medio de pago prefieren los clientes de alto valor?
 
 ### Operativas
+
 - ¿Qué días de la semana tienen más ventas?
 - ¿Cuál es el ticket promedio por ciudad?
 - ¿Qué productos se venden mejor juntos?
 
 ### Comerciales
+
 - ¿Quiénes son mis clientes más valiosos?
 - ¿Qué clientes están en riesgo de fuga?
 - ¿Qué segmentos de clientes son más rentables?
